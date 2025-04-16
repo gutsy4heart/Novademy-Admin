@@ -1,0 +1,353 @@
+/* Общие стили админки */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-logo {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-logo h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-item.active {
+  background-color: #6B21A8;
+  color: #fff;
+  border-right: 3px solid #E31C79;
+}
+
+.admin-content {
+  flex: 1;
+  margin-left: 250px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-header {
+  background-color: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.admin-user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button {
+  background-color: transparent;
+  color: #E31C79;
+  border: 1px solid #E31C79;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #E31C79;
+  color: #fff;
+}
+
+.admin-main-content {
+  padding: 30px;
+}
+
+/* Стили таблиц */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table th {
+  background-color: #f2f2f2;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Стили для форм */
+.admin-form {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #6B21A8;
+  outline: none;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #6B21A8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #5a1c91;
+}
+
+.btn-secondary {
+  background-color: #E31C79;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #c81269;
+}
+
+.btn-cancel {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #e5e5e5;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Стили для предварительного просмотра */
+.preview-container {
+  margin-top: 10px;
+}
+
+.image-preview {
+  max-width: 300px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.image-preview img {
+  width: 100%;
+}
+
+.video-preview {
+  max-width: 400px;
+  margin-top: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.video-preview video {
+  width: 100%;
+}
+
+/* Компоненты для сообщений */
+.message {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.message-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.message-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.message-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .admin-sidebar {
+    width: 200px;
+  }
+  
+  .admin-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px 0;
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+  
+  .admin-logo {
+    padding: 10px 20px;
+  }
+  
+  .admin-header {
+    padding: 10px 15px;
+  }
+  
+  .admin-main-content {
+    padding: 15px;
+  }
+} 
