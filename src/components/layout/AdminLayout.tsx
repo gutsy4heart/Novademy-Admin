@@ -69,7 +69,7 @@ const AdminLayout: React.FC = () => {
       <main className="admin-content">
         <header className="admin-header">
           <div className="admin-header-content">
-            <h2>Admin Panel{user && ` - ${user.fullName}`}</h2>
+            <h2>Admin Panel{user && ` - ${user.name}`}</h2>
             <div className="admin-user-menu">
               <button className="logout-button" onClick={handleLogout}>
                 Çıxış

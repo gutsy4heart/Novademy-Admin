@@ -19,10 +19,10 @@ interface AuthResponse {
 }
 
 // Login function
-export const login = async (email: string, password: string): Promise<User> => {
+export const login = async (username: string, password: string): Promise<User> => {
   try {
     const response = await axios.post<AuthResponse>(`${apiClient.defaults.baseURL}/auth/login`, {
-      email,
+      username,
       password
     });
     
@@ -37,7 +37,7 @@ export const login = async (email: string, password: string): Promise<User> => {
     console.error('Login error:', error);
     if (error.response) {
       if (error.response.status === 400) {
-        throw new Error('Yanlış e-poçt və ya şifrə');
+        throw new Error('Yanlış istifadəçi adı və ya şifrə');
       } else if (error.response.status === 403) {
         throw new Error('Bu portal yalnız admin istifadəçilər üçündür');
       }

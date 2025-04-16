@@ -4,12 +4,12 @@ import { login, isAuthenticated } from '../../api/authService';
 import './Auth.css';
 
 interface LoginFormData {
-  email: string;
+  username: string;
   password: string;
 }
 
 const Login: React.FC = () => {
-  const [formData, setFormData] = useState<LoginFormData>({ email: '', password: '' });
+  const [formData, setFormData] = useState<LoginFormData>({ username: '', password: '' });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Login: React.FC = () => {
     setError(null);
 
     try {
-      const userData = await login(formData.email, formData.password);
+      const userData = await login(formData.username, formData.password);
       
       if (userData.role !== 'Admin') {
         setError('Bu portal yalnız admin istifadəçilər üçündür');
@@ -41,7 +41,7 @@ const Login: React.FC = () => {
       
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.message || 'E-poçt və ya şifrə yanlışdır');
+      setError(err.message || 'İstifadəçi adı və ya şifrə yanlışdır');
     } finally {
       setLoading(false);
     }
@@ -59,12 +59,12 @@ const Login: React.FC = () => {
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label htmlFor="email">E-poçt</label>
+            <label htmlFor="username">İstifadəçi adı</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
               onChange={handleChange}
               required
             />
